@@ -8,29 +8,33 @@ public class BankSystem {
 
         String firstName = "Felipe";
         int age = 27;
-        String password = "a8f3s3f3";
-        boolean passwordAccess = false;
-        boolean accessOrBank = false;
-
-        int bankAccountNumber = 5071;
-        boolean bankAccountNumberAccess = false;
-
         double Balance = 3.200;
         String typeAccount = "Corrente";
 
-        System.out.println("Type your password:");
-        String verificationPassword = Reading.nextLine();
-        if (password.equals(verificationPassword)) {
-            passwordAccess = true;
-            System.out.println("enter your account:");
-            int verificationBankAccountNumber = Reading.nextInt();
-            if (passwordAccess || bankAccountNumber == verificationBankAccountNumber) {
-                bankAccountNumberAccess = true;
-                accessOrBank = true;
-            }
+        String password = "a8f3s3f3";
+        boolean passwordAccess = false;
+
+        int bankAccountNumber = 5071;
+        boolean bankAccountAccess = false;
+
+        boolean accessOrBank = false;
+
+        System.out.println("enter your account:");
+        int verificationBankAccountNumber = Reading.nextInt();
+        if (bankAccountNumber == verificationBankAccountNumber) {
+            System.out.println("Account Validate");
+            bankAccountAccess = true;
+        }else {
+            System.out.println("Account invalidate");
         }
-        if (accessOrBank == true){
-            System.out.println("Access or bank On!");
+        System.out.println("enter your password");
+        String nowPassword = Reading.nextLine();
+        System.out.println(nowPassword);
+
+
+
+        if (bankAccountAccess){
+            System.out.println("Welcome " +firstName);
         }
     }
 }
